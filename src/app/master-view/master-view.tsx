@@ -9,8 +9,8 @@ import '/src/app/base-view-styles.css';
 
 export default function MasterView() {
   const classes = createClassTransformer(styles);
-  const { financialBoxOfficeRevenue } = useGetBoxOfficeRevenue();
   const { northwindEmployees } = useGetEmployees();
+  const { financialBoxOfficeRevenue } = useGetBoxOfficeRevenue();
 
   const gridLoadingGridTemplate = () => {
     return (
@@ -37,7 +37,6 @@ export default function MasterView() {
     <>
       <div className={classes("row-layout master-view-container")}>
         <div className={classes("column-layout group")}>
-          <IgrCombo outlined={true} data={financialBoxOfficeRevenue} label="Label/Placeholder" displayKey="Franchise" singleSelect={true} className={classes("single-select-combo")}></IgrCombo>
           <IgrGrid data={northwindEmployees} primaryKey="employeeID" isLoading={false} loadingGridTemplate={gridLoadingGridTemplate} emptyGridTemplate={gridEmptyGridTemplate} detailTemplate={gridDetailTemplate} allowFiltering={true} filterMode="excelStyleFilter" className={classes("ig-typography ig-scrollbar grid")}>
             <IgrColumn field="employeeID" dataType="number" header="employeeID" sortable={true} selectable={false}></IgrColumn>
             <IgrColumn field="lastName" dataType="string" header="lastName" sortable={true} selectable={false}></IgrColumn>
@@ -56,6 +55,7 @@ export default function MasterView() {
             <IgrColumn field="notes" dataType="string" header="notes" sortable={true} selectable={false}></IgrColumn>
             <IgrColumn field="avatarUrl" dataType="string" header="avatarUrl" sortable={true} selectable={false}></IgrColumn>
           </IgrGrid>
+          <IgrCombo outlined={true} data={financialBoxOfficeRevenue} label="Label/Placeholder" displayKey="Franchise" singleSelect={true} className={classes("single-select-combo")}></IgrCombo>
         </div>
       </div>
     </>

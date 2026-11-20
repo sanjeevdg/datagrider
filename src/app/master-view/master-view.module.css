@@ -22,14 +22,14 @@
   flex-grow: 1;
   flex-basis: 0;
 }
-.single-select-combo {
-  height: max-content;
-  min-width: min-content;
-}
 .grid {
   --ig-size: var(--ig-size-medium);
   min-width: 600px;
   min-height: 300px;
   flex-grow: 1;
   flex-basis: 0;
+}
+.single-select-combo {
+  height: max-content;
+  min-width: min-content;
 }
